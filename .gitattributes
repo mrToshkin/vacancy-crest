@@ -1,0 +1,29 @@
+* text=auto
+
+# force text
+*.html text
+*.pug text
+*.js text
+*.css text
+*.scss text
+*.md text
+
+# Windows files (need CRLF)
+*.sln text eol=crlf
+*.bat eol=crlf
+
+# Unix files (need LF)
+*.sh eol=lf
+
+# binary files
+*.jpg binary
+*.gif binary
+*.png binary
+*.webp binary
+*.svg binary
+
+# diff drivers
+*.html diff=html
+*.css diff=css
+*.scss diff=css
+*.js diff=java

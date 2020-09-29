@@ -1,0 +1,23 @@
+.menu {
+  display: block;
+  flex-wrap: wrap;
+  width: 100%;
+
+  list-style: none;
+
+  @media (min-width: $desktope) {
+    display: flex;
+    justify-content: space-between;
+    width: auto; 
+  }
+  &__item-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 9px 10px;
+
+    color: $black;
+    transition: 0.15s;
+    &:hover { color: rgba($black, 0.8); transition: 0.15s; }
+  }
+}

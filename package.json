@@ -1,0 +1,55 @@
+{
+  "name": "vacancy-crest",
+  "version": "1.0.0",
+  "private": false,
+  "description": "testing progect for vacancy",
+  "main": "index.html",
+  "scripts": {
+    "optimg": "gulp optimg",
+    "dev": "gulp dev",
+    "build": "gulp build",
+    "default": "gulp dev && gulp watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Strizhov Anton",
+    "email": "toshkin.na@gmail.com"
+  },
+  "repository": "github:mrtoshkin/vanancy-crest",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "del": "^4.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-cache": "^1.1.3",
+    "gulp-cached": "^1.1.1",
+    "gulp-cheerio": "^1.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-csscomb": "^3.1.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-imagemin": "^6.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-svgmin": "^2.2.0",
+    "gulp-svgstore": "^7.0.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-webp": "^4.0.1",
+    "imagemin-jpeg-recompress": "^6.0.0",
+    "node-sass": "^4.12.0"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "normalize.css": "^8.0.1"
+  },
+  "browserslist": [
+    "last 3 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ]
+}

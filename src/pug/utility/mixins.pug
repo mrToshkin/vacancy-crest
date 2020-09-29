@@ -1,0 +1,61 @@
+mixin icon(nameIcon, $width, $height, $viewBox)
+  if($viewBox)
+    svg(class="svg-sprite-icon icon-"+nameIcon width=""+$width height=""+$height viewBox=""+$viewBox)
+      use(xlink:href="img/svg/sprite.svg#"+nameIcon)
+  else
+   svg(class="svg-sprite-icon icon-"+nameIcon width=""+$width height=""+$height)
+      use(xlink:href="img/svg/sprite.svg#"+nameIcon)
+
+mixin icon-label(nameIcon, $label, $width, $height, $viewBox)
+  if($viewBox)
+    svg(class="svg-sprite-icon icon-"+nameIcon aria-label=""+$label width=""+$width height=""+$height viewBox=""+$viewBox)
+      use(xlink:href="img/svg/sprite.svg#"+nameIcon)
+  else
+   svg(class="svg-sprite-icon icon-"+nameIcon aria-label=""+$label width=""+$width height=""+$height)
+      use(xlink:href="img/svg/sprite.svg#"+nameIcon)
+
+mixin icon-class(nameIcon, classIcon, $width, $height, $viewBox)
+  if($viewBox)
+    svg(class="svg-sprite-icon icon-"+nameIcon+" "+classIcon width=""+$width height=""+$height viewBox=""+$viewBox)
+      use(xlink:href="img/svg/sprite.svg#"+nameIcon)
+  else
+   svg(class="svg-sprite-icon icon-"+nameIcon+" "+classIcon width=""+$width height=""+$height)
+      use(xlink:href="img/svg/sprite.svg#"+nameIcon)
+
+mixin icon-class-label(nameIcon, classIcon, $label, $width, $height, $viewBox)
+  if($viewBox)
+    svg(class="svg-sprite-icon icon-"+nameIcon+" "+classIcon aria-label=""+$label width=""+$width height=""+$height viewBox=""+$viewBox)
+      use(xlink:href="img/svg/sprite.svg#"+nameIcon)
+  else
+   svg(class="svg-sprite-icon icon-"+nameIcon+" "+classIcon aria-label=""+$label width=""+$width height=""+$height)
+      use(xlink:href="img/svg/sprite.svg#"+nameIcon)
+
+mixin article-social-icon-label(nameIcon, $label, $width, $height, $viewBox)
+  if($viewBox)
+    svg(class="svg-sprite-icon icon-"+nameIcon aria-label=""+$label width=""+$width height=""+$height viewBox=""+$viewBox)
+      use(xlink:href="img/svg/sprite.svg#"+nameIcon)
+  else
+   svg(class="svg-sprite-icon icon-"+nameIcon aria-label=""+$label width=""+$width height=""+$height)
+      use(xlink:href="img/svg/sprite-article-social.svg#"+nameIcon)
+
+//- mobile-first. (--normal, --tablet, --mobile)x2 retina, x2 webp = 12 pics
+//- (!) .webp is default exist
+//- img/file--normal@x2.format
+- var retina = true
+mixin img(file, format, classImg, alttext, retina)
+  if(retina)
+    picture
+      source(media="(min-width: "+desktope+"px)"   srcset="img/"+file+"--normal.webp 1x, img/"+file+"--normal@2x.webp 2x" type="image/webp")
+      source(media="(min-width: "+desktope+"px)"   srcset="img/"+file+"--normal."+format+" 1x, img/"+file+"--normal@2x."+format+" 2x")
+      source(media="(min-width: "+tablet+"px)"     srcset="img/"+file+"--tablet.webp 1x, img/"+file+"--tablet@2x.webp 2x" type="image/webp")
+      source(media="(min-width: "+tablet+"px)"     srcset="img/"+file+"--tablet."+format+" 1x, img/"+file+"--tablet@2x."+format+" 2x")
+      source(media="(max-width: "+(tablet-1)+"px)" srcset="img/"+file+"--mobile.webp 1x, img/"+file+"--mobile@2x.webp 2x" type="image/webp")
+      img(class=""+classImg alt=""+alttext            src="img/"+file+"--mobile."+format srcset="img/"+file+"--mobile@2x."+format+" 2x")
+  else
+    picture
+      source(media="(min-width: "+desktope+"px)"   srcset="img/"+file+"--normal.webp" type="image/webp")
+      source(media="(min-width: "+desktope+"px)"   srcset="img/"+file+"--normal."+format)
+      source(media="(min-width: "+tablet+"px)"     srcset="img/"+file+"--tablet.webp" type="image/webp")
+      source(media="(min-width: "+tablet+"px)"     srcset="img/"+file+"--tablet."+format)
+      source(media="(max-width: "+(tablet-1)+"px)" srcset="img/"+file+"--mobile.webp" type="image/webp")
+      img(class=""+classImg alt=""+alttext            src="img/"+file+"--mobile."+format)

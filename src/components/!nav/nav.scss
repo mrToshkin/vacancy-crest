@@ -1,0 +1,46 @@
+.nav {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: stretch;
+  flex-wrap: wrap;
+
+  width: 100%;
+  margin-top: 17px;
+
+  &__logo {
+    display: block;
+    @media (min-width: $desktope) {
+      width: 80px;
+      .icon-logo { margin: 0 auto; }
+    }
+  }
+
+  &__menu {
+    width: 100%;
+    margin-top: 27px;
+    
+    @media (min-width: $desktope) {
+      width: auto;
+      margin-top: 0;
+    }
+  }
+}
+
+.nav__logo-link { &:focus { .icon-logo { opacity: 0.8; transition: 0.15s; } } }
+.icon-logo { opacity: 1; transition: 0.15s; &:hover { opacity: 0.8; transition: 0.15s; } }
+
+.nojs {
+  .nav {
+    @media (max-width: $tablet) {
+      display: block;
+    }
+    &__menu {
+      display: block;
+      margin-left: 0;
+    }
+    &__burger { display: none; }
+  }
+}

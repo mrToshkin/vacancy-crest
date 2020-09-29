@@ -1,0 +1,64 @@
+// mobile first
+.footer-bg-wrapper {
+  position: relative;
+  z-index: 1;
+  margin-top: 45px;
+  @media (min-width: $desktope) {
+    margin-top: 122px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;  
+    opacity: 0.4;
+    z-index: -1;
+    background: url(../img/general/footer--mobile.jpg) center center no-repeat;
+    background: url(../img/general/footer--mobile.webp) center center no-repeat;
+    @media 
+    (min-resolution: $retina-dpi), 
+    (min-resolution: $retina-dppx) {
+      background: url(../img/general/footer--mobile@2x.jpg) center center no-repeat;
+      background: url(../img/general/footer--mobile@2x.webp) center center no-repeat;
+    }
+    @media (min-width: $tablet) {
+      background: url(../img/general/footer--desktope.jpg) center center no-repeat;
+      background: url(../img/general/footer--desktope.webp) center center no-repeat;
+      background-size: cover;
+    }
+    @media 
+    (min-width: $tablet) and (min-resolution: $retina-dpi), 
+    (min-width: $tablet) and (min-resolution: $retina-dppx) {
+      background: url(../img/general/footer--desktope@2x.jpg) center center no-repeat;
+      background: url(../img/general/footer--desktope@2x.webp) center center no-repeat;
+      background-size: cover;
+    }
+    @media (min-width: $desktope) {
+      background: url(../img/general/footer--desktope.jpg) center center no-repeat;
+      background: url(../img/general/footer--desktope.webp) center center no-repeat;
+    }
+    @media 
+    (min-width: $desktope) and (min-resolution: $retina-dpi), 
+    (min-width: $desktope) and (min-resolution: $retina-dppx) {
+      background: url(../img/general/footer--desktope@2x.jpg) center center no-repeat;
+      background: url(../img/general/footer--desktope@2x.webp) center center no-repeat;
+    }
+  }
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  min-height: 540px;
+  padding-bottom: 30px;
+
+  @media (min-width: $tablet) {
+    min-height: 460px;
+    padding-bottom: 40px;
+  }
+  @media (min-width: $desktope) {
+    min-height: 290px;
+    padding-bottom: 53px;
+  }
+}

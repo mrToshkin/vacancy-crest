@@ -1,0 +1,19 @@
+.input-reset,
+.button-reset {
+  background: none;
+  border: 0;
+  color: inherit;
+  /* cursor: default; */
+  font: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  overflow: visible;
+  padding: 0;
+  -webkit-appearance: button; /* for input */
+  user-select: none; /* for button */
+  &::-moz-focus-inner,
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}

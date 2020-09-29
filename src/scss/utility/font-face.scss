@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "ALS Schlange Sans";
+  font-weight: 400;
+  font-display: swap;
+
+  src:
+    url("../fonts/ALSSchlangesans.woff2") format("woff2"),
+    url("../fonts/ALSSchlangesans.woff") format("woff");
+}
+
+@font-face {
+  font-family: "ALS Schlange Sans";
+  font-weight: 700;
+  font-display: swap;
+
+  src:
+    url("../fonts/ALSSchlangesans-Bold.woff2") format("woff2"),
+    url("../fonts/ALSSchlangesans-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "ALS Schlange Sans";
+  font-weight: 900;
+  font-display: swap;
+
+  src:
+    url("../fonts/ALSSchlangesans-Black.woff2") format("woff2"),
+    url("../fonts/ALSSchlangesans-Black.woff") format("woff");
+}

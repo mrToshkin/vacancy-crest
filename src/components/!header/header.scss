@@ -1,0 +1,25 @@
+.header { 
+  display: flex;
+  flex-direction: column;
+  min-height: 470px;
+
+  @media (min-width: $tablet) {
+    min-height: 550px;
+  }
+  @media (min-width: $desktope) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    min-height: 640px;
+  }
+
+  &__nav{
+    min-height: 131px;
+    @media (min-width: $desktope) {
+      flex: 0 1 100%;
+      align-self: baseline;
+      min-height: 145px;
+      margin-top: 43px;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+include ../utility/mixins
+block variables
+
+- var desktope  = 1400
+- var tablet = 768
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title #{title}
+    <!--[if IE]>
+    meta(http-equiv='X-UA-Compatible', content="IE = edge")
+    <![endif]-->
+    meta(name="format-detection" content="telephone=no")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="keywords" content="тест, crest")
+    meta(name="description" content="Тестовое задание crest")
+    link(rel="canonical" href="https://vacancy-crest.com/")
+
+    meta(property="og:url" content="https://vacancy-crest.com/")
+    meta(property="og:type" content="website")
+    meta(property="og:title" content="open graphtitle")
+    meta(property="og:description" content="open graph description")
+    meta(name="twitter:title" content="twitter tittle")
+    meta(name="twitter:description" content="twitter description")
+    meta(name="twitter:card" content="summary")
+
+    link(rel="preload" href="fonts/PlayfairDisplay-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous")
+    
+    //link(rel="icon" href="img/general/favicon.png" sizes="16x16 32x32" type="image/png")
+    //link(rel="apple-touch-icon" href="img/general/favicon.png" sizes="180x180")
+
+    link(rel="stylesheet" type='text/css' href="css/styles.min.css")
+
+    script(src="js/libs.min.js" defer)
+    script(src="js/script.min.js" defer)
+  body
+    block header
+    block content
+    include ../../components/!footer/footer
+    .mobile-menu__overlay
+    .mobile-menu
+      - var attr = {tabindex: '3'};
+      include ../../components/!menu/menu
+    block popups
+    block script
+    noscript Your browser does not support JavaScript
