@@ -1,25 +1,349 @@
 .header { 
+  position: relative;
+
   display: flex;
   flex-direction: column;
-  min-height: 470px;
 
-  @media (min-width: $tablet) {
-    min-height: 550px;
+  &__nav { z-index: 4; }
+
+  &__body, 
+  &__background--mobile {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 67px;
+      left: 12px;
+      z-index: -2;
+
+      display: block;
+      height: 60px;
+      width: 160px;
+
+      background: url(../img/general/rehau.png), url(../img/general/kbe.png);
+      //background: url(../img/general/rehau.webp), url(../img/general/kbe.webp);
+      background-position: center left, center right;
+      background-repeat: no-repeat no-repeat;
+      background-size: contain;
+
+    }
   }
-  @media (min-width: $desktope) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    min-height: 640px;
+  
+  &__body {
+    &::before {
+      @media (min-width: $mobile) {
+        top: unset;
+        bottom: 150px;
+        left: unset;
+        right: 25%;
+      }
+
+      @media (min-width: $tablet) {
+        bottom: 380px;
+        right: 30%;
+
+        height: 97px;
+        width: 280px;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      &::before { display: none; }
+    }
   }
 
-  &__nav{
-    min-height: 131px;
-    @media (min-width: $desktope) {
-      flex: 0 1 100%;
-      align-self: baseline;
-      min-height: 145px;
-      margin-top: 43px;
+  &::before {
+    @media (min-width: $mobile) {
+      content: '';
+      position: absolute;
+      top: 205px;
+      bottom: 0;
+      right: 0;
+      z-index: -3;
+
+      display: block;
+      width: 65%;
+
+      background-image: url(../img/general/header__man@tablet.png), url(../img/general/header@tablet.jpg);
+      background-image: url(../img/general/header__man@tablet.webp), url(../img/general/header@tablet.webp);
+      background-position: 95% bottom, right bottom;
+      background-size: 195px 224px, cover;
+      background-repeat: no-repeat;
+    }
+
+    @media (min-width: $tablet) {
+      background-image: url(../img/general/header__man@desktope.png), url(../img/general/header@desktope.jpg);
+      background-image: url(../img/general/header__man@desktope.webp), url(../img/general/header@desktope.webp);
+      background-position: 90% bottom, right bottom;
+      background-size: 420px 482px, cover;
+    }
+  }
+
+  &::after {
+    @media (min-width: $mobile) {
+      content: '';
+      position: absolute;
+      z-index: -2;
+      top: 205px;
+      bottom: 0;
+      left: 20%;
+      transform: translateX(-30%);
+  
+      display: block;
+      width: 540px;
+  
+      background: url(../img/general/header__plug@tablet.png) bottom left / contain no-repeat;
+      //background: url(../img/general/header__plug@tablet.webp) bottom left / contain no-repeat; // webp слишком заметно размывает
+      
+    }
+    @media (min-width: $tablet) {
+      top: 0;
+      left: 30%;
+      transform: translateX(-65%);
+
+      width: 1200px;
+
+      background: url(../img/general/header__plug.png) bottom left / contain no-repeat;
+      background: url(../img/general/header__plug.webp) bottom left / contain no-repeat;
+    }
+  }
+
+  &__background--mobile {
+    position: relative;
+    z-index: 0;
+
+    height: 196px;
+    background: linear-gradient(to top, $white, rgba(255,255,255,0) 35%), url(../img/general/header__man@tablet.webp), url(../img/general/header@mobile.jpg);
+    background: linear-gradient(to top, $white, rgba(255,255,255,0) 35%), url(../img/general/header__man@tablet.webp), url(../img/general/header@mobile.webp);
+    background-position: center center, 90% bottom;
+    background-size: cover, 161px 185px;
+    background-repeat: no-repeat;
+
+    @media (min-width: $mobile) {
+      display: none;
+    }
+  }
+  
+  &__article {
+    z-index: 4;
+
+    margin-top: 30px;
+    margin-bottom: 60px;
+    
+    @media (min-width: $mobile) {
+      max-width: 220px;
+      margin-bottom: 30px;
+    }
+    
+    @media (min-width: $tablet) {
+      max-width: 400px;
+      margin-top: 85px;
+      margin-bottom: 95px;
+    }
+  }
+
+  &__img-stamp {
+    margin: 35px auto 0 auto;
+    
+    @media (min-width: $tablet) {
+      margin: 35px auto 0 0;
+    }
+  }
+
+  &__free-measure--mobile { 
+    position: relative;
+    margin-bottom: 50px;
+
+    @media (min-width: $mobile) {
+      display: none;
+    }
+  }
+
+  &__get-full-computation--desktope {
+    display: none;
+    @media (min-width: $tablet) {
+      display: block;
+    }
+  }
+}
+
+.banner {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  &__logo {
+    z-index: 2;
+
+    grid-column: 1/13;
+    justify-self: center;
+
+    @media (min-width: $mobile) {
+      grid-column: 1/7;
+      justify-self: start;
+    }
+  }
+
+  &__text {
+    z-index: 2;
+
+    display: none;
+
+    @media (min-width: $mobile) {
+      display: block;
+      grid-column: 7/13;
+      align-self: center;
+  
+      text-align: center;
+    }
+  }
+}
+
+.logo {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  &__vector { margin-left: 2px; }
+  &__text {
+    position: absolute;
+    top: 13px;
+    left: 22px;
+
+    font-weight: 900;
+    @include font-size(22);
+    letter-spacing: rem(2);
+    line-height: rem(20);
+  }
+  &__description {
+    margin-top: 13px;
+
+    color: $grey-light;
+    @include font-size(12);
+    font-weight: 700;
+    text-align: center;
+  }
+}
+
+.free-measure {
+  &__link {
+    position: relative;
+
+    display: block;
+    margin-top: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 83px;
+
+    color: $black;
+    text-decoration: none;
+    font-weight: 900;
+    @include font-size(24);
+    line-height: rem(20);
+    letter-spacing: 0.27rem;
+    word-wrap: break-word;
+
+    background: linear-gradient(266.8deg, #FFF854 0.02%, #FFE03E 101.17%);
+    border-radius: 6px;
+
+    @media (max-width: em(330)) {
+      @include font-size(16);
+    }
+
+    span {
+      font-weight: 700;
+      @include font-size(16);
+      letter-spacing: 0.3rem;
+
+      @media (max-width: em(330)) {
+        @include font-size(12);
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 8px;
+
+      width: 63px;
+      height: 50px;
+
+      background: url(../img/content/tape.png);
+      background: url(../img/content/tape.webp);
+    }
+  }
+
+  &__description {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: block;
+    width: 80%;
+    padding: 7px;
+    margin-top: 5px;
+    
+    color: $color-accomp;
+    font-weight: 700;
+    @include font-size(14);
+    line-height: rem(16);
+    text-align: center;
+
+    border: 2px solid $color-accomp;
+    border-radius: 4px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -7px;
+      left: 50%;
+      transform: translateX(-50%) rotateZ(45deg);
+      clip-path: polygon(0 0, 100% 0, 100% 15%, 15% 100%, 0 100%);
+
+      display: block;
+      width: 12px;
+      height: 12px;
+
+      background-color: $white;
+      border-top: 2px solid $color-accomp;
+      border-left: 2px solid $color-accomp;
+    }
+  }
+}
+
+.get-full-computation {
+  &__link {
+    @media (min-width: $tablet) {
+      position: absolute;
+      bottom: -41px;
+      right: 10%;
+  
+      display: block;
+      max-width: 392px;
+      padding: 16px 29px;
+      padding-left: 80px;
+      
+      color: $white;
+      font-weight: 900;
+      @include font-size(19);
+      line-height: rem(22);
+      
+      background-color: $color-accomp;
+      border: 6px solid $white;
+      border-radius: 6px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 30px;
+  
+        width: 45px;
+        height: 50px;
+  
+        background: url(../img/content/calc.png) no-repeat;
+        background: url(../img/content/calc.webp) no-repeat;
+      }
     }
   }
 }

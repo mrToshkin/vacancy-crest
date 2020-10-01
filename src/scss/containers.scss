@@ -1,16 +1,16 @@
 .container {
   width: 100%;
-  max-width: $mobile;
+  max-width: $desktope-rem;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 110px;
 
-  @media (min-width: $tablet) {
-    max-width: $tablet;
+  @media (max-width: $tablet) {
+    max-width: $tablet-rem;
     padding: 0 30px;
   }
-  @media (min-width: $desktope) {
-    max-width: $desktope;
-    padding: 0 110px;
+  @media (max-width: $mobile) {
+    max-width: $mobile-rem;
+    padding: 0 20px;
   }
 }
 

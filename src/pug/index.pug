@@ -4,15 +4,36 @@ block variables
   - var title = "Тестовое задание Crest"
 
 block header
-  .header
+  header.header
+    .container
+      .header__top.banner.grid
+        .banner__logo
+          a(href="index.html" tabindex="1").logo.link-reset
+            svg.logo__vector(width="209" height="64" viewBox="0 0 209 64" fill="none" xmlns="http://www.w3.org/2000/svg")
+              <path d="M28.6337 0C15.8636 0 4.6066 10.5162 3.49107 23.4867L0 64H179.753C192.521 64 203.778 53.4874 204.894 40.5145L208.385 0H28.6337ZM201.44 40.2068C200.478 51.3853 190.749 60.4782 179.753 60.4782H3.78469L6.944 23.7943C7.90693 12.6159 17.6369 3.523 28.6337 3.523H204.598L201.44 40.2068Z" fill="#FFE600"/>
+            p.logo__text 000000000000<br>000000000000
+          p.logo__description ОФИЦИАЛЬНЫЙ ПРОИЗВОДИТЕЛЬ
+        p.banner__text ШАПКА
     nav.header__nav
       include ../components/!nav/nav
-    .container
-      .header__article
-        article
-          h1 ОФИЦИАЛЬНЫЙ ПРОИЗВОДИТЕЛЬ 
-            span ТЕКСТ, ТЕКСТ, ТЕКСТ
+    .header__background--mobile
+    .header__body
+      .container
+        .header__article
+          article
+            h1 ОФИЦИАЛЬНЫЙ ПРОИЗВОДИТЕЛЬ 
+              span Текст, текст, текст
+          +img('general/header__stamp', 'png', 'header__img-stamp', 'Цены в 1,5-2 раза ниже средних по Тольятти')
+          .header__free-measure--mobile
+            a(href="#").free-measure__link.link-reset БЕСПЛАТНЫЙ<br>
+              span ВЫЕЗД ЗАМЕРЩИКА
+            p.free-measure__description ВЫЕЗЖАЕМ В ДЕНЬ ОБРАЩЕНИЯ
+          .header__get-full-computation--desktope
+            a(href="#").get-full-computation__link.link-reset ПОЛУЧИТЬ ТОЧНЫЙ РАСЧЁТ И СРАВНИТЬ ЦЕНЫ
 
 block content
+  //- styles.scss
+  .spacer--dark
+
 
 block script

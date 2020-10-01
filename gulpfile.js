@@ -1,6 +1,6 @@
 'use strict';
 
-let gulp = require('gulp'),
+const gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     del = require('del'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -19,7 +19,7 @@ let gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     svgmin = require('gulp-svgmin'),
     svgstore = require('gulp-svgstore'),
-    uglify = require('gulp-uglify'),
+    terser = require('gulp-terser'),
     webp = require('gulp-webp'),
     imgCompress = require('imagemin-jpeg-recompress');
 
@@ -84,22 +84,22 @@ gulp.task('pug:min', () => {
 gulp.task('js', () => {
   return gulp.src('./src/js/*.js')
     .pipe(concat('script.min.js'))
-    .pipe(uglify({toplevel: true}))
+    .pipe(terser())
     .pipe(gulp.dest('./build/js'))
     .pipe(browserSync.reload({stream: true}));
 });
 gulp.task('js:libs', () => {
   return gulp.src([
-    'node_modules/jquery/dist/jquery.min.js'
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/focus-visible/dist/focus-visible.min.js'
   ])
     .pipe(concat('libs.min.js'))
-    /* .pipe(uglify({toplevel: true})) */
     .pipe(gulp.dest('./build/js'))
     .pipe(browserSync.reload({stream: true}));
 });
 gulp.task('js:fills', () => {
   return gulp.src('./src/js/fills/*.js')
-    .pipe(uglify({toplevel: true}))
+    .pipe(terser())
     .pipe(gulp.dest('./build/js/fills-min'))
     .pipe(browserSync.reload({stream: true}));
 });

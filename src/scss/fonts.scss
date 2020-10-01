@@ -1,1 +1,41 @@
 * { font-family: $font; }
+
+h1 {
+  color: $black;
+  @include font-size(32);
+  font-weight: 900;
+  line-height: rem(39);
+  text-align: center;
+  text-shadow:  $white 1px 1px 0, $white -1px -1px 0, 
+                $white -1px 1px 0, $white 1px -1px 0,
+                2px 2px 3px rgba(0, 0, 0, 0.25);
+                
+  @media (max-width: em(300)) {
+    @include font-size(24);
+  }
+
+  @media (max-width: em(250)) {
+    @include font-size(16);
+  }
+
+  @media (min-width: $mobile) {
+    color: $white;
+    @include font-size(25);
+    line-height: rem(27);
+    text-align: left;
+    text-transform: uppercase;
+    text-shadow: unset;
+  }
+
+  @media (min-width: $tablet) {
+    @include font-size(40);
+    line-height: rem(50);
+  }
+  span {
+    color: $color-accomp;
+
+    @media (min-width: $mobile) {
+      color: $color-main;
+    }
+  }
+}

@@ -1,9 +1,8 @@
-.container
-  .nav
-    .nav__logo
-      a(href="index.html").nav__logo-link
-        picture
-          source(class="icon-logo-changer" media="(min-width: 1400px)" srcset="img/svg/logo.svg")
-          img(class="icon-logo" src="img/svg/logo-mobile.svg" alt="logo")
+.nav__bg-wrapper
+  .nav.container
+    p.nav__description Меню
     .nav__menu
       include ../!menu/menu
+    button.nav__burger.burger(type="button" tabindex="2" aria-expanded="false" aria-controls="menu")
+      span.burger__elements
+      span.visually-hidden Open menu

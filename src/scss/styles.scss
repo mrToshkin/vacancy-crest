@@ -1,3 +1,4 @@
+@import "utility/focus-visible";
 @import "utility/libs";
 @import "utility/vars";
 @import "utility/font-face";
@@ -5,7 +6,7 @@
 //------------------GENERAL-------------------//
 html {
   height: 100%;
-  font-size: $base-font-size;
+  font-size: #{$base-font-size}px;
 }
 
 body {
@@ -80,11 +81,13 @@ input[type="file"].visually-hidden {
 }
 
 //------------------RPOJECT-------------------//
-a, button, input, summary, textarea {
-  outline-color: $color-main;
-}
+a, button, input, summary, textarea { &:focus { outline-color: $black; } }
 .hidden { display: none; }
 address { font-style: normal;}
+
+.spacer {
+  &--dark { min-height: 154px; background-color: $bgc-spacer-dark; }
+}
 
 @import "fonts";
 @import "containers";
