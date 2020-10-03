@@ -4,14 +4,19 @@
   margin: 0 auto;
   padding: 0 110px;
 
-  @media (max-width: $tablet) {
+  @media (max-width: $tablet-1) {
     max-width: $tablet-rem;
     padding: 0 30px;
   }
-  @media (max-width: $mobile) {
+  @media (max-width: $mobile-1) {
     max-width: $mobile-rem;
     padding: 0 20px;
   }
+}
+
+.container--center {
+  display: flex;
+  justify-content: center;
 }
 
 .grid { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 20px; }

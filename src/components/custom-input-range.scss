@@ -1,0 +1,207 @@
+@mixin custom-input-range(
+  $track-color: #F5F5F5,
+  $track-border-color: #cfd8dc,
+  $track-shadow-color: rgba(0, 0, 0, 0),
+
+  $thumb-color: #607d8b,
+  $thumb-border-color: #eceff1,
+  $thumb-shadow-color: rgba(0, 0, 0, 0),
+
+  $fill-color: #3AB3E1,
+  $fill-border-color: #cfd8dc,
+  
+  $track-width: 100%,
+  $track-height: 8px,
+  $track-radius: 0px,
+  $track-border-width: 0px,
+  $track-shadow-size: 0px,
+  $track-shadow-blur: 0px,
+
+  $thumb-width: 8px,
+  $thumb-width-hover: 15px,
+  $thumb-height: 8px,
+  $thumb-height-hover: 15px,
+  $thumb-radius: 0px,
+  $thumb-border-width: 0px,
+  $thumb-shadow-size: 0px,
+  $thumb-shadow-blur: 0px,
+  
+  $fill-border-width: 0px,
+
+  $custom-tracks-offset:0px) {
+
+    position: relative;
+    height: $thumb-height-hover;
+
+    span {
+      position: absolute;
+      top: ($thumb-height-hover / 2);
+      transform: translateY($custom-tracks-offset);
+      z-index: 1;
+
+      display:inline-block;
+      height: $track-height;
+
+      @media (min-width: $tablet) {
+        top: ($thumb-height / 2);
+      }
+    }
+    &__fill {
+      background-color: $fill-color;
+      border: $fill-border-width solid $fill-border-color;
+      border-top-left-radius: $track-radius;
+      border-bottom-left-radius: $track-radius;
+    }
+    &__track {
+      width: 100%;
+      height: $track-height;
+
+      background-color: $track-color;
+      border: $track-border-width solid $track-border-color;
+      border-radius: $track-radius;
+    }
+
+    [type='range'] {
+      position: relative;
+      z-index: 2;
+      -webkit-appearance: none;
+
+      width: $track-width;
+      margin-top: $thumb-height-hover / 2 + 1px; // + 1px чтобюы не прыгала страница
+      margin-bottom: $thumb-height-hover / 2;
+
+      background: transparent;
+
+      @media (min-width: $tablet) {
+        margin-top: $thumb-height / 2 + 1px;
+        margin-bottom: $thumb-height / 2;
+      }
+
+      &::-moz-focus-outer{ border: 0; }
+      &:focus { outline: 0; }
+
+      &::-webkit-slider-thumb {
+        cursor: pointer;
+        -webkit-appearance: none;
+        
+        width: $thumb-width-hover;
+        height: $thumb-height-hover;
+        margin-top: ($track-height / 2) - ($thumb-height / 2);
+        
+        background: $thumb-color;
+        border: $thumb-border-width solid $thumb-border-color;
+        border-radius: $thumb-radius;
+        box-shadow: $thumb-shadow-size $thumb-shadow-size $thumb-shadow-blur $thumb-shadow-color, 0 0 $thumb-shadow-size lighten($thumb-shadow-color, 5%);
+        
+        transition: 0.25s;
+
+        &:hover {
+          width: $thumb-width-hover;
+          height: $thumb-height-hover;
+          margin-top: ($track-height / 2) - ($thumb-height / 2);
+
+          transition: 0.25s;
+        }
+
+        @media (min-width: $tablet) {
+          width: $thumb-width;
+          height: $thumb-height;
+          margin-top: ($thumb-height / 2) - ($track-height / 2); // было ($track-height / 2) - ($thumb-height / 2)
+        }
+      }
+
+      &::-moz-range-track {
+        cursor: pointer;
+        
+        width: $track-width;
+        height: $track-height;
+        
+        background: transparent;
+        transition: all .2s ease;
+      }
+
+      &::-moz-range-thumb {
+        cursor: pointer;
+        
+        width: $thumb-width-hover;
+        height: $thumb-height-hover;
+        
+        background: $thumb-color;
+        border: $thumb-border-width solid $thumb-border-color;
+        border-radius: $thumb-radius;
+        box-shadow: $thumb-shadow-size $thumb-shadow-size $thumb-shadow-blur $thumb-shadow-color, 0 0 $thumb-shadow-size lighten($thumb-shadow-color, 5%);
+      
+        transition: 0.25s;
+
+        &:hover {
+          width: $thumb-width-hover;
+          height: $thumb-height-hover;
+          transition: 0.25s;
+        }
+
+        @media (min-width: $tablet) {
+          width: $thumb-width;
+          height: $thumb-height;
+        }
+      }
+
+      &::-ms-track {
+        cursor: pointer;
+        
+        width: $track-width;
+        height: $track-height;
+        
+        color: transparent;
+        
+        background: transparent;
+        border-color: transparent;
+        border-width: ($thumb-height / 2) 0;
+        transition: all .2s ease;
+      }
+
+      &::-ms-thumb {
+        cursor: pointer;
+        
+        width: $thumb-width-hover;
+        height: $thumb-height-hover;
+        margin-top: 0;
+        
+        background: $thumb-color;
+        border: $thumb-border-width solid $thumb-border-color;
+        border-radius: $thumb-radius;
+        box-shadow: $thumb-shadow-size $thumb-shadow-size $thumb-shadow-blur $thumb-shadow-color, 0 0 $thumb-shadow-size lighten($thumb-shadow-color, 5%);
+      
+        transition: 0.25s;
+
+        &:hover {
+          width: $thumb-width-hover;
+          height: $thumb-height-hover;
+          transition: 0.25s;
+        }
+
+        @media (min-width: $tablet) {
+          width: $thumb-width;
+          height: $thumb-height;
+        }
+      }
+  }
+}
+
+.custom-input-range {
+  @include custom-input-range(
+    $track-color: $grey,
+    $thumb-color: $color-accomp,
+    $fill-color: $color-accomp,
+
+    $thumb-width: 11px,
+    $thumb-height: 11px,
+    $thumb-radius: 50%,
+    $thumb-width-hover: 20px,
+    $thumb-height-hover: 20px,
+
+    $track-height: 5px,
+    $track-radius: 2.5px,
+
+    $custom-tracks-offset: 7px
+  );
+}

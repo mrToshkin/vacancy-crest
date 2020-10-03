@@ -1,0 +1,70 @@
+main.calculator
+  .container
+    .calculator__header
+      h2 КАЛЬКУЛЯТОР РАССРОЧКИ
+    form(action="", method="post").calculator__body
+      .calculator__features
+        .features-calculator__item
+          .features-calculator__icon
+            img(src="img/svg/ruble.svg" width="47px" height="63px" alt="Иконка").features-calculator__img
+          p.features-calculator__p Сумма рассрочки<br>
+            span до 1 млн. ₽
+        .features-calculator__item
+          .features-calculator__icon
+            img(src="img/svg/time-left.svg" width="62px" height="62px" alt="Иконка").features-calculator__img
+          p.features-calculator__p Решение по заявке<br>
+            span от 3 минут
+        .features-calculator__item
+          .features-calculator__icon
+            img(src="img/svg/docs.svg" width="53px" height="63px" alt="Иконка").features-calculator__img
+          p.features-calculator__p Условия получения<br>
+            span 2 документа
+      .form-calculator.calculator__form
+        .form-calculator__sliders
+          .form-calculator__sliders-description
+            label(for="price").form-calculator__sliders-p Сколько стоит остекление?
+            p#price-slider.form-calculator__sliders-price 102 000 ₽
+          .custom-input-range
+            span.custom-input-range__track
+            span.custom-input-range__fill
+            input(type="range" id="price" name="price" min="15" max="1000" step="1" value="102").form-calculator__input-range.custom-input-range__input
+          .form-calculator__sliders-minmax
+            p.form-calculator__sliders-min 15 000 ₽
+            p.form-calculator__sliders-max 1 000 000 ₽
+          .form-calculator__sliders-description
+            label(for="months").form-calculator__sliders-p Срок рассрочки
+          .custom-input-range
+            span.custom-input-range__track
+            span.custom-input-range__fill
+            input(type="range" id="months" name="months" min="1" max="6" step="1" value="6").form-calculator__input-range.custom-input-range__input
+          .form-calculator__sliders-minmax
+            p.form-calculator__sliders-max 6 месяцев
+          .form-calculator__sliders-description.js-start
+            p.form-calculator__sliders-p Банки партнеры:
+            .form-calculator__sliders-bank
+              a(href="#")
+                picture
+                  source(media="(min-width: "+(mobile / 16)+"em)" srcset="img/general/euro-bank@tablet.png")
+                  img.form-calculator__sliders-bank-img(alt="Евробанк" src="img/general/euro-bank@mobile.png")
+              a(href="#")
+                picture
+                  source(media="(min-width: "+(mobile / 16)+"em)" srcset="img/general/alpha-bank@tablet.png")
+                  img.form-calculator__sliders-bank-img(alt="Евробанк" src="img/general/alpha-bank@mobile.png")
+      .calculator__result.container--center
+        .form-calculator__result
+          .form-calculator__result-bg
+          .form-calculator__result-body
+            .form-calculator__result-line
+              p.form-calculator__result-p Сумма рассрочки:
+              p#price-result.form-calculator__result-price 102 000 ₽
+            .form-calculator__result-line
+              p.form-calculator__result-p Первоначальный взнос: 
+                span.form-calculator__result-p--red-price 10 200 ₽
+              p.form-calculator__result-p Переплата: 
+                span.form-calculator__result-p--red-price 0 ₽
+            .form-calculator__result-line
+              p.form-calculator__result-p Ежемесячный платеж:
+              p#months-result.form-calculator__result-price 20 500 ₽
+            .form-calculator__result-line
+              //- .button -> links.scss
+              button(type="submit").form-calculator__result-button.button.button-reset Подать заявку

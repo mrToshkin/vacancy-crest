@@ -81,15 +81,16 @@
   &::after {
     @media (min-width: $mobile) {
       content: '';
+      overflow: hidden;
       position: absolute;
       z-index: -2;
       top: 205px;
       bottom: 0;
       left: 20%;
-      transform: translateX(-30%);
+      transform: translateX(-50%);
   
       display: block;
-      width: 540px;
+      width: 440px;
   
       background: url(../img/general/header__plug@tablet.png) bottom left / contain no-repeat;
       //background: url(../img/general/header__plug@tablet.webp) bottom left / contain no-repeat; // webp слишком заметно размывает
@@ -210,7 +211,7 @@
     left: 22px;
 
     font-weight: 900;
-    @include font-size(22);
+    font-size: rem(22);
     letter-spacing: rem(2);
     line-height: rem(20);
   }
@@ -218,7 +219,7 @@
     margin-top: 13px;
 
     color: $grey-light;
-    @include font-size(12);
+    font-size: rem(12);
     font-weight: 700;
     text-align: center;
   }
@@ -237,7 +238,7 @@
     color: $black;
     text-decoration: none;
     font-weight: 900;
-    @include font-size(24);
+    font-size: rem(24);
     line-height: rem(20);
     letter-spacing: 0.27rem;
     word-wrap: break-word;
@@ -246,16 +247,20 @@
     border-radius: 6px;
 
     @media (max-width: em(330)) {
-      @include font-size(16);
+      font-size: rem(16);
+    }
+
+    &:hover, &:focus { 
+      background: linear-gradient(266.8deg, #fffb8e 0.02%, #ffeb89 101.17%);
     }
 
     span {
       font-weight: 700;
-      @include font-size(16);
+      font-size: rem(16);
       letter-spacing: 0.3rem;
 
       @media (max-width: em(330)) {
-        @include font-size(12);
+        font-size: rem(12);
       }
     }
 
@@ -285,7 +290,7 @@
     
     color: $color-accomp;
     font-weight: 700;
-    @include font-size(14);
+    font-size: rem(14);
     line-height: rem(16);
     text-align: center;
 
@@ -312,11 +317,14 @@
 }
 
 .get-full-computation {
+  &__container {
+    position: relative;
+  }
   &__link {
     @media (min-width: $tablet) {
       position: absolute;
       bottom: -41px;
-      right: 10%;
+      right: 110px;
   
       display: block;
       max-width: 392px;
@@ -325,7 +333,7 @@
       
       color: $white;
       font-weight: 900;
-      @include font-size(19);
+      font-size: rem(19);
       line-height: rem(22);
       
       background-color: $color-accomp;

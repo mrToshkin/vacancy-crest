@@ -2,7 +2,7 @@
 
 h1 {
   color: $black;
-  @include font-size(32);
+  font-size: rem(32);
   font-weight: 900;
   line-height: rem(39);
   text-align: center;
@@ -11,16 +11,16 @@ h1 {
                 2px 2px 3px rgba(0, 0, 0, 0.25);
                 
   @media (max-width: em(300)) {
-    @include font-size(24);
+   font-size: rem(24);
   }
 
   @media (max-width: em(250)) {
-    @include font-size(16);
+   font-size: rem(16);
   }
 
   @media (min-width: $mobile) {
     color: $white;
-    @include font-size(25);
+    font-size: rem(25);
     line-height: rem(27);
     text-align: left;
     text-transform: uppercase;
@@ -28,7 +28,7 @@ h1 {
   }
 
   @media (min-width: $tablet) {
-    @include font-size(40);
+    font-size: rem(40);
     line-height: rem(50);
   }
   span {
@@ -37,5 +37,22 @@ h1 {
     @media (min-width: $mobile) {
       color: $color-main;
     }
+  }
+}
+
+h2 {
+  font-weight: 900;
+  font-size: rem(24);
+  line-height: rem(22);
+  text-align: center;
+
+  @media (min-width: $mobile) {
+    font-size: rem(30);
+    line-height: rem(32);
+  }
+
+  @media (min-width: $tablet) {
+    font-size: rem(40);
+    line-height: rem(50);
   }
 }

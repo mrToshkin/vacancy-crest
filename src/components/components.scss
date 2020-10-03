@@ -1,7 +1,9 @@
 @import "!header/header";
-@import "!header/header-backgrounds";
 @import "!nav/nav";
 @import "!nav/__burger";
 @import "!menu/mobile-menu";
+
+@import "custom-input-range";
+@import "calculator/calculator";
 
 @import "!footer/footer";

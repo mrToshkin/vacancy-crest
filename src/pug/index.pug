@@ -28,12 +28,15 @@ block header
             a(href="#").free-measure__link.link-reset БЕСПЛАТНЫЙ<br>
               span ВЫЕЗД ЗАМЕРЩИКА
             p.free-measure__description ВЫЕЗЖАЕМ В ДЕНЬ ОБРАЩЕНИЯ
-          .header__get-full-computation--desktope
-            a(href="#").get-full-computation__link.link-reset ПОЛУЧИТЬ ТОЧНЫЙ РАСЧЁТ И СРАВНИТЬ ЦЕНЫ
+      .header__get-full-computation--desktope
+        .get-full-computation__container.container
+          a(href="#").get-full-computation__link.link-reset ПОЛУЧИТЬ ТОЧНЫЙ РАСЧЁТ И СРАВНИТЬ ЦЕНЫ
 
 block content
   //- styles.scss
   .spacer--dark
+  include ../components/calculator/calculator
+  .spacer--light
 
 
 block script

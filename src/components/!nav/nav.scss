@@ -21,7 +21,7 @@
     @media (max-width: $mobile) {
       display: block;
 
-      @include font-size(24);
+      font-size: rem(24);
       font-weight: 700;
       line-height: rem(28);
       padding: 12px 0;
