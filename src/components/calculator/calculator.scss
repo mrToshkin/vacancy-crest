@@ -14,7 +14,7 @@
   &__body {
     @media (min-width: em(1000)) {
       display: grid;
-      grid-template-columns: auto auto;
+      grid-template-columns: auto 368px;
       grid-template-rows: auto auto;
       column-gap: 10px;
     }
