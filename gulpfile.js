@@ -1,6 +1,7 @@
 'use strict';
 
 const gulp = require('gulp'),
+    ghPages = require('gulp-gh-pages'),
     browserSync = require('browser-sync').create(),
     del = require('del'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -178,6 +179,11 @@ gulp.task('watch', () => {
   gulp.watch('./src/js/fills/*.js', gulp.series('js:fills'));
   gulp.watch('./src/**/*.pug', gulp.series('pug')).on('change', browserSync.reload);
   gulp.watch('./src/fonts/**', gulp.series('fonts'));
+});
+
+gulp.task('deploy', function () {
+  return gulp.src('./build/**/*')
+    .pipe(ghPages());
 });
 
 gulp.task('optimg', gulp.series('clean:img', 'img', 'webp', 'svg', 'sprite'));
